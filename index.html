@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>JS PROJECT Todo App Js</title>
+   <link rel="stylesheet" href="./style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+</head>
+
+<body style="background-color: black;">
+    <!-- List Modal -->
+    <div id="modal-list" class="modal" data-animation="slideInOutDown">
+        <div class="modal-dialog list--modal--dialog">
+            <header class="modal-header" >
+                Add New List
+            </header>
+            <section class="modal-content">
+                <input id="list-title" type="text" name="list" />
+            </section>
+            <footer class="modal-footer">
+                <button id="add-card" class="close-modal" aria-label="close modal" data-close onclick="acceptData()">
+                    Add
+                </button>
+                <button class="close-modal" aria-label="close modal" data-close>
+                    Close
+                </button>
+            </footer>
+        </div>
+    </div>
+
+
+    <!-- Card Modal -->
+    <div id="modal-list-2" class="modal" data-animation="slideInOutDown">
+        <div class="modal-dialog list--modal--dialog">
+            <header class="modal-header">
+                Add New Item
+            </header>
+            <section class="modal-content">
+                <input id="list-item-title" type="text" name="list" />
+            </section>
+            <footer class="modal-footer">
+                <button id="add-card-item" class="close-modal" aria-label="close modal-2" data-close
+                    onclick="addItems(this)">
+                    Add
+                </button>
+                <button class="close-modal" aria-label="close modal-2" data-close>
+                    Close
+                </button>
+            </footer>
+        </div>
+    </div>
+
+    
+
+    <div class="modal" id="modal-list-3">
+        <div class="modal-dialog list--modal--dialog">
+            <header class="modal-header">
+                Add New Item
+            </header>
+            <section class="modal-content">
+                <input id="list-item-title" type="text" name="list" />
+            </section>
+            <footer class="modal-footer">
+                <button id="add-card-item" class="modal-close" onclick="addItems(this); modalClose();">
+                    Add
+                </button>
+                <button onclick="modalClose()">
+                    Close
+                </button>
+            </footer>
+           
+        </div>
+    </div>
+
+
+    <!-- Card Expand Modal -->
+    <div id="card-modal-list" class="modal card__modal" data-animation="slideInOutTop" style="background-color: black;">
+        <div class="modal-dialog">
+          
+            <br />
+            <div class="card__modal__buttons">
+                <div id="back-arrow" data-close>
+                    <i class="fa fa-chevron-circle-left" style="font-size:32px;color: rgb(91, 118, 239);"></i>
+                    <span id="back" style="color: aliceblue;  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Back</span>
+                </div>
+                <div id="add-arrow" data-open="modal-list" data-close>
+                    <i class="fa fa-plus-circle" style="font-size:32px;color: rgb(124, 124, 253);" ></i>
+                    <span id="add" style="color: aliceblue;  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Add List</span>
+                </div>
+            </div>
+            <header class="card__modal__header">
+                <span id="card-modal-title" class="card__modal__title" style="color: aliceblue;font-size: 20px;">Trip to Paris</span>
+            </header>
+
+            <div id="trans">
+                
+                <i class="fa fa-trash-o" style="font-size:25px;color:red"></i>
+                <i class="fa fa-plus-circle" style="font-size:25px;color: blue;" ></i>
+            </div>
+
+            <div id="card-detail" class="card card__list">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header id="header">
+            <span id="header__title">
+                <span id="tasks"style="color: aliceblue;  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:40px">Tasks</span>
+                <span id="lists"style="color: aliceblue;  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: lighter; font-size:40px">Lists</span>
+            </span>
+            <span id="header__button" data-open="modal-list">
+                <span id="add-button">
+                    <i class="fa fa-plus-circle" style="font-size:36px;color: blue;" ></i>
+                </span>
+                <span id="add-list" style="color: aliceblue;  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Add List</span>
+            </span>
+        </header>
+
+        <div id="message" style="color: aliceblue;  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;margin-left: 350px;">No items in the todo list</div>
+        <!-- Cards -->
+        <main id="cards">
+          
+        </main>
+    </div>
+
+    <script src="./js/card-items-modal.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
